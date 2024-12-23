@@ -1,0 +1,12 @@
+---
+applications:
+  - name: scriptsforAppHealth
+    random-route: true
+    path: myapp
+    memory: 512M
+    buildpacks:
+      - nodejs_buildpack
+    command: node main.js  # Ensure you have a starting point for your app, such as index.js
+    env:
+      NODE_ENV: production  # You can add more environment variables if needed
+    health-check-type: process  
